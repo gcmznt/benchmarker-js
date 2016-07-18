@@ -1,0 +1,17 @@
+{
+  "name": "benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bench": "^0.3.6",
+    "benchmark": "^2.1.0",
+    "inquirer": "^1.1.2",
+    "yargs": "^4.8.0"
+  }
+}
