@@ -1,12 +1,10 @@
-// jshint esversion:6
-
 const fs = require('fs');
 const path = require('path');
 const argv = require('yargs').argv;
 const benchmark = require('benchmark');
 const inquirer = require('inquirer');
 
-const runs = {
+const tester = {
   benchmarkjs: function(mod) {
     const suite = new benchmark.Suite();
 
@@ -24,6 +22,7 @@ const runs = {
       })
       .run({ 'async': true });
   },
+
   bench: function(mod) {
     exports.compare = mod;
     require("bench").runMain();
@@ -35,7 +34,7 @@ inquirer.prompt([
     type: 'list',
     name: 'tester',
     message: 'Choose the tester that you want to use:',
-    choices: ['bench', 'benchmarkjs'],
+    choices: Object.keys(tester),
   },
   {
     type: 'list',
@@ -45,5 +44,5 @@ inquirer.prompt([
   },
 ]).then(function (answers) {
   const mod = require(path.join(__dirname, 'test', answers.module));
-  runs[answers.tester](mod);
+  tester[answers.tester](mod);
 });

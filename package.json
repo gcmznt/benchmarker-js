@@ -1,12 +1,12 @@
 {
-  "name": "benchmarks",
+  "name": "benchmarks-run",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Giacomo Giko Zinetti",
   "license": "ISC",
   "devDependencies": {
     "bench": "^0.3.6",
