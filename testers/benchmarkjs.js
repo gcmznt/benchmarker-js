@@ -4,7 +4,7 @@ module.exports = function(mod) {
   const suite = new benchmark.Suite();
 
   for (let method in mod) {
-    if (mod.hasOwnProperty(method) && typeof mod[method] === "function") {
+    if (mod.hasOwnProperty(method) && typeof mod[method] === 'function') {
       suite.add(method, mod[method]);
     }
   }
